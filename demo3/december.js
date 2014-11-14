@@ -22,7 +22,7 @@
 		createItem("id1", colors[0], "circle", 50, 200);
 		createItem("id2", colors[1], "circle", 50, 280);
 		createItem("id3", colors[2], "circle", 50, 360);
-		createItem("id4", colors[3], "circle", 50, 440));
+		createItem("id4", colors[3], "circle", 50, 440);
 
 		createItem("id5", colors[0], "circle", 370, 200);
 		createItem("id6", colors[1], "circle", 370, 280);
@@ -39,7 +39,9 @@
 		circle.attr({
 		    fill: color,
 		    stroke: "#333",
-		    strokeWidth: 4
+		    strokeWidth: 4,
+			cx : x,
+			cy : y
 		});
 
 		var dx = 0;
@@ -65,10 +67,6 @@
 		    });
 		};
 		circle.drag(onDragMove, null, onDragEnd);
-		circle.attr({
-			cx : x,
-			cy : y
-		});
 		items[id] = circle;
 	}
 

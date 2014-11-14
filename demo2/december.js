@@ -20,7 +20,7 @@
 		createItem("id1", colors[0], "circle", 50, 200);
 		createItem("id2", colors[1], "circle", 50, 280);
 		createItem("id3", colors[2], "circle", 50, 360);
-		createItem("id4", colors[3], "circle", 50, 440));
+		createItem("id4", colors[3], "circle", 50, 440);
 
 		createItem("id5", colors[0], "circle", 370, 200);
 		createItem("id6", colors[1], "circle", 370, 280);
