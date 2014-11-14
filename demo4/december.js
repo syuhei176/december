@@ -41,7 +41,7 @@
 	}
 
 	function createItem(id, color, shape, x, y) {
-		var circle = s.circle(0, 0, 30);
+		var circle = s.circle(x, y, 30);
 		circle.attr({
 		    fill: color,
 		    stroke: "#333",
@@ -52,8 +52,8 @@
 		var dy = 0;
 		var ddx = 0;
 		var ddy = 0;
-		var dxDone = 0;
-		var dyDone = 0;
+		var dxDone = x;
+		var dyDone = y;
 
 		function onDragMove (dx, dy, posx, posy) {
 		    dx = dx + dxDone;
@@ -62,19 +62,19 @@
 		    ddx = dx;
 		    ddy = dy;
 		};
+		function onDragStart(x, y, e) {
+			dxDone = Number( circle.attr("cx") );
+			dyDone = Number( circle.attr("cy") );
+		}
 		function onDragEnd(e) {
 		    dxDone = ddx;
 		    dyDone = ddy;
-		    ds.set(self.id, {
+		    ds.set(id, {
 		    	x : Number( circle.attr("cx") ),
 		    	y : Number( circle.attr("cy") )
 		    });
 		};
-		circle.drag(onDragMove, null, onDragEnd);
-		circle.attr({
-			cx : x,
-			cy : y
-		});
+		circle.drag(onDragMove, onDragStart, onDragEnd);
 		items[id] = circle;
 	}
 
