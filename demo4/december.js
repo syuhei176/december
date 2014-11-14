@@ -34,7 +34,8 @@
 		});
 		ds.query({}).done(function(datas) {
 			datas.forEach(function(data) {
-				items[data.id].attr({cx : data.x, cy : data.y});
+				if(items[data.id])
+					items[data.id].attr({cx : data.x, cy : data.y});
 			});
 		});
 	}
