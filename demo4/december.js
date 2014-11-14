@@ -3,7 +3,7 @@
 	var milkcocoa = new MilkCocoa("https://io-ti2dak0ql.mlkcca.com:443");
 	var ds = milkcocoa.dataStore("december1");
 
-	var img_path = "img/";
+	var img_path = "../img/";
 	var svgElement = document.getElementById("svg");
 	var tm = window.innerWidth / 420;
 	svgElement.setAttribute("width", window.innerWidth-30);
